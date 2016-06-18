@@ -43,7 +43,7 @@ def includeme(config):
 
     config.add_translation_dirs('kotti_google_analytics:locale')
     AnayticsDefault.tracking_id = \
-        config.registry.settings.get("kotti_google_analystics.tracking_id", None)
+        config.registry.settings.get("kotti_google_analytics.tracking_id", None)
     config.add_static_view('static-kotti_google_analytics', 'kotti_google_analytics:static')
 
     config.scan(__name__)
