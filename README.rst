@@ -35,7 +35,7 @@ To enable the extension in your Kotti site, activate the configurator::
     kotti.configurators =
         kotti_google_analytics.kotti_configure
         
-    kotti_google_analystics.tracking_id = track_id_here
+    kotti_google_analytics.tracking_id = track_id_here
 
 
 Database upgrade
