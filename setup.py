@@ -38,7 +38,8 @@ setup(
     author='Oshane Bailey',
     author_email='b4.oshany@gmail.com',
     url='https://github.com/b4oshany/kotti_google_analytics',
-    keywords='kotti web cms wcms pylons pyramid sqlalchemy bootstrap pdf',
+    keywords=('kotti web cms wcms pylons pyramid'
+              'sqlalchemy bootstrap google analytics'),
     license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
     packages=find_packages(),
     include_package_data=True,
