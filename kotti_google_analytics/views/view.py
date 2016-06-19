@@ -19,7 +19,6 @@ from kotti_google_analytics.views import BaseView
 class CartView(BaseView):
 
     def __call__(self):
-        print AnayticsDefault.tracking_id
         return {
             "tracking_id": AnayticsDefault.tracking_id
         }
