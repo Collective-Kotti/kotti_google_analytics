@@ -1,5 +1,6 @@
 import colander
 
+from kotti.util import Link
 from kotti_controlpanel.util import add_settings
 from kotti_controlpanel.util import get_setting
 from kotti_google_analytics import _, controlpanel_id, AnayticsDefault
@@ -43,7 +44,13 @@ GAControlPanel = {
 
 
 def populate():
-    add_settings(GAControlPanel)
+
+    links = [
+        Link('analytics-report', title=_(u"Google Analytics Report")),
+        Link('analytics-setup', title=_(u"Setup Google Analytics"))
+    ]
+
+    add_settings(GAControlPanel, links=links)
 
     AnayticsDefault.client_id = get_setting("client_id")
     AnayticsDefault.client_secret = get_setting("client_secret")
