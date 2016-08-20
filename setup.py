@@ -13,11 +13,13 @@ try:
 except IOError:
     CHANGES = ''
 
-version = "1.0.3"
+version = "1.0.4"
 
 install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
+    'googleanalytics>=0.22.2',
+    'kotti_controlpanel>=0.0.1'
 ]
 
 
@@ -38,8 +40,8 @@ setup(
     author='Oshane Bailey',
     author_email='b4.oshany@gmail.com',
     url='https://github.com/b4oshany/kotti_google_analytics',
-    keywords=('kotti web cms wcms pylons pyramid'
-              'sqlalchemy bootstrap google analytics tracking users'),
+    keywords=('google analytics kotti web cms wcms pylons pyramid'
+              'sqlalchemy bootstrap tracking users'),
     license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
     packages=find_packages(),
     include_package_data=True,

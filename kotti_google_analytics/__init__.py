@@ -8,11 +8,21 @@ Created on 2016-06-18
 from kotti.resources import File
 from kotti.views.slots import assign_slot
 from pyramid.i18n import TranslationStringFactory
+from kotti_controlpanel.util import get_setting
 
-_ = TranslationStringFactory('kotti_google_analytics')
+
+controlpanel_id = 'kotti_google_analytics'
+
+_ = TranslationStringFactory(controlpanel_id)
+
 
 class AnayticsDefault(object):
     tracking_id = None
+    client_secret = None
+    client_id = None
+    access_token = None
+    refresh_token = None
+    identity = None
 
 
 def kotti_configure(settings):
@@ -28,6 +38,7 @@ def kotti_configure(settings):
     """
 
     settings['pyramid.includes'] += ' kotti_google_analytics'
+    settings['kotti.populators'] += ' kotti_google_analytics.populate.populate'
     settings['kotti.alembic_dirs'] += ' kotti_google_analytics:alembic'
     settings['kotti.fanstatic.view_needed'] += ' kotti_google_analytics.fanstatic.css_and_js'
     assign_slot('analytics-code', 'belowcontent')
