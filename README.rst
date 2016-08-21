@@ -1,7 +1,7 @@
 kotti_google_analytics
 ************************
 
-This extension allows Google Analytics to track users and sessions on your site.
+This extension allows Google Analytics to Kotti, in order to track users and sessions on your site.
 In addition, it adds Google Analytics Visualizations for reporting by using
 `Google Analytics Embed API`_.
 
@@ -45,6 +45,7 @@ Setup
 To enable the extension in your Kotti site, activate the configurator::
 
     kotti.configurators =
+	    kotti_controlpanel.kotti_configure
         kotti_google_analytics.kotti_configure
         
     kotti_google_analytics.tracking_id = track_id_here

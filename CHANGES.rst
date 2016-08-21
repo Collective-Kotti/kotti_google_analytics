@@ -2,7 +2,7 @@ History
 =======
 
 
-0.1.0
+1.1.0
 -------
 
 - Added Google visualization for reports.
@@ -15,19 +15,19 @@ History
 .. _kottii_controlpanel: https://pypi.python.org/pypi/kotti_controlpanel
 
 
-0.0.3
+1.0.3
 ------
 
 - Set the tracking code to be placed in the slot below the content area.
 
 
-0.0.2
+1.0.2
 -------
 
 - Added Tracking code
 
 
-0.0.1 - unreleased
+1.0.0 - unreleased
 --------------------
 
 - Create package with ``pcreate -s kotti kotti_google_analytics``.
