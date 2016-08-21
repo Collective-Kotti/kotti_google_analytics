@@ -19,7 +19,7 @@ install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
     'googleanalytics>=0.22.2',
-    'kotti_controlpanel>=0.0.1'
+    'kotti_controlpanel>=0.0.2'
 ]
 
 

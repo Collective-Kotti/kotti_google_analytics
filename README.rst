@@ -1,5 +1,9 @@
 kotti_google_analytics
-**********************
+************************
+
+This extension allows Google Analytics to track users and sessions on your site.
+In addition, it adds Google Analytics Visualizations for reporting by using
+`Google Analytics Embed API`_.
 
 This is an extension to Kotti that allows to add foo to your site.
 
@@ -7,6 +11,9 @@ This is an extension to Kotti that allows to add foo to your site.
 |downloads_month|_
 |license|_
 |build_status_stable|_
+
+
+.. _Google Analytics Embed API: https://ga-dev-tools.appspot.com/
 
 .. |pypi| image:: https://img.shields.io/pypi/v/kotti_google_analytics.svg?style=flat-square
 .. _pypi: https://pypi.python.org/pypi/kotti_google_analytics/

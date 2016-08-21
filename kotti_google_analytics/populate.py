@@ -1,9 +1,9 @@
 import colander
 
-from kotti.util import Link
+import deform
 from kotti_controlpanel.util import add_settings
 from kotti_controlpanel.util import get_setting
-from kotti_google_analytics import _, controlpanel_id, AnayticsDefault
+from kotti_google_analytics import _, controlpanel_id, AnalyticsDefault, CONTROL_PANEL_LINKS
 
 
 class AnalyticsSchema(colander.MappingSchema):
@@ -26,11 +26,21 @@ class AnalyticsSchema(colander.MappingSchema):
         colander.String(),
         name="access_token",
         title=_(u'Access Token'),
+        widget = deform.widget.HiddenWidget(),
+        missing=True
     )
     refresh_token = colander.SchemaNode(
         colander.String(),
         name="refresh_token",
         title=_(u'Refresh Token'),
+        widget = deform.widget.HiddenWidget(),
+        missing=True
+    )
+    property_id = colander.SchemaNode(
+        colander.String(),
+        name="property_id",
+        title=_(u'Account Property ID'),
+        default=AnalyticsDefault.property_id
     )
 
 
@@ -40,20 +50,10 @@ GAControlPanel = {
     'description': _(u"Settings for google_analytics"),
     'success_message': _(u"Successfully saved google_analytics settings."),
     'schema_factory': AnalyticsSchema,
+    'template': "kotti_google_analytics:templates/controlpanel.pt"
 }
 
 
 def populate():
 
-    links = [
-        Link('analytics-report', title=_(u"Google Analytics Report")),
-        Link('analytics-setup', title=_(u"Setup Google Analytics"))
-    ]
-
-    add_settings(GAControlPanel, links=links)
-
-    AnayticsDefault.client_id = get_setting("client_id")
-    AnayticsDefault.client_secret = get_setting("client_secret")
-    AnayticsDefault.access_token = get_setting("access_token")
-    AnayticsDefault.refresh_token = get_setting("refresh_token")
-    AnayticsDefault.identity = get_setting("identity")
+    add_settings(GAControlPanel, links=CONTROL_PANEL_LINKS)

@@ -5,25 +5,25 @@ Created on 2016-06-18
 :author: Oshane Bailey (b4.oshany@gmail.com)
 """
 
+from kotti.util import Link
 from kotti.resources import File
 from kotti.views.slots import assign_slot
 from pyramid.i18n import TranslationStringFactory
-from kotti_controlpanel.util import get_setting
+from kotti_controlpanel.util import get_setting, set_setting
 
 
 controlpanel_id = 'kotti_google_analytics'
 
 _ = TranslationStringFactory(controlpanel_id)
 
+CONTROL_PANEL_LINKS = [
+    Link('analytics-report', title=_(u"Google Analytics Report")),
+    Link('analytics-setup', title=_(u"Setup Google Analytics"))
+]
 
-class AnayticsDefault(object):
-    tracking_id = None
-    client_secret = None
-    client_id = None
-    access_token = None
-    refresh_token = None
-    identity = None
 
+class AnalyticsDefault(object):
+    property_id = None
 
 def kotti_configure(settings):
     """ Add a line like this to you .ini file::
@@ -53,7 +53,7 @@ def includeme(config):
     """
 
     config.add_translation_dirs('kotti_google_analytics:locale')
-    AnayticsDefault.tracking_id = \
+    AnalyticsDefault.property_id = \
         config.registry.settings.get("kotti_google_analytics.tracking_id", None)
     config.add_static_view('static-kotti_google_analytics', 'kotti_google_analytics:static')
 

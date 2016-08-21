@@ -1,7 +1,33 @@
 History
 =======
 
-0.1 - unreleased
-----------------
+
+0.1.0
+-------
+
+- Added Google visualization for reports.
+- Added kotti_controlpanel_ kotti package, in order to save Google Analytics settings.
+- Added `Google Analytics Embed API`_ for visualizations.
+- Added `googleanalytics`_ python package to generate access token for Google Analytics.
+
+.. _googleanalytics: https://pypi.python.org/pypi/googleanalytics/0.22.2
+.. _Google Analytics Embed API: https://ga-dev-tools.appspot.com/
+.. _kottii_controlpanel: https://pypi.python.org/pypi/kotti_controlpanel
+
+
+0.0.3
+------
+
+- Set the tracking code to be placed in the slot below the content area.
+
+
+0.0.2
+-------
+
+- Added Tracking code
+
+
+0.0.1 - unreleased
+--------------------
 
 - Create package with ``pcreate -s kotti kotti_google_analytics``.
