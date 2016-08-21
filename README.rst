@@ -5,6 +5,11 @@ This extension allows Google Analytics to track users and sessions on your site.
 In addition, it adds Google Analytics Visualizations for reporting by using
 `Google Analytics Embed API`_.
 
+Example of Google Analytics Visualization:
+------------------------------------------
+
+.. image:: https://static.raymondcamden.com/images/wp-content/uploads/2015/07/shot11.png
+
 This is an extension to Kotti that allows to add foo to your site.
 
 |pypi|_
