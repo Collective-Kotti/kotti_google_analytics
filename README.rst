@@ -6,7 +6,7 @@ In addition, it adds Google Analytics Visualizations for reporting by using
 `Google Analytics Embed API`_.
 
 Example of Google Analytics Visualization:
-------------------------------------------
+--------------------------------------------
 
 .. image:: https://static.raymondcamden.com/images/wp-content/uploads/2015/07/shot11.png
 
