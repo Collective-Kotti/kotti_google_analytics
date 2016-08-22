@@ -1,6 +1,12 @@
 History
 =======
 
+1.1.15
+-------
+
+- Upgrade `kotti_controlpanel`_ from 1.1.14 to 1.1.15
+
+
 1.1.11 - 1.1.14
 ----------------
 
