@@ -1,10 +1,11 @@
 History
 =======
 
-1.1.15
--------
+1.1.15 - 1.1.16
+-----------------
 
-- Upgrade `kotti_controlpanel`_ from 1.1.14 to 1.1.15
+- Pinned `kotti_controlpanel`_ to 1.0.1 or greater
+- Adjusted this package for the new version of `kotti_controlpanel`_.
 
 
 1.1.11 - 1.1.14
