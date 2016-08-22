@@ -19,6 +19,11 @@
     </header>
     <div class="row">
         <div class="Chartjs col-md-6">
+          <h3>This Week vs Last Week (by users)</h3>
+          <figure class="Chartjs-figure" id="chart-ga-users-container"></figure>
+          <ol class="Chartjs-legend" id="legend-ga-users-container"></ol>
+        </div>
+        <div class="Chartjs col-md-6">
           <h3>This Week vs Last Week (by sessions)</h3>
           <figure class="Chartjs-figure" id="chart-1-container"></figure>
           <ol class="Chartjs-legend" id="legend-1-container"></ol>
@@ -37,6 +42,11 @@
           <h3>Top Countries (by sessions)</h3>
           <figure class="Chartjs-figure" id="chart-4-container"></figure>
           <ol class="Chartjs-legend" id="legend-4-container"></ol>
+        </div>
+        <div class="Chartjs col-md-6">
+          <h3>Top Operating Systems (by pageview)</h3>
+          <figure class="Chartjs-figure" id="chart-5-container"></figure>
+          <ol class="Chartjs-legend" id="legend-5-container"></ol>
         </div>
     </div>
     

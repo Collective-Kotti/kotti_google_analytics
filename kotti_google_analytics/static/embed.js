@@ -121,11 +121,15 @@ function gapi_init(){
         activeUsers.set(data).execute();
     
         // Render all the of charts for this view.
-        renderWeekOverWeekChart(data.ids);
+        renderWeekOverWeekChartBySessions(data.ids);
+        renderWeekOverWeekChartByUsers(data.ids);
         renderYearOverYearChart(data.ids);
         renderTopBrowsersChart(data.ids);
         renderTopCountriesChart(data.ids);
+        renderOperatingSystemChart(data.ids);
       });
+      
+      
     
     
       /**
@@ -133,7 +137,73 @@ function gapi_init(){
        * overlays session data for the current week over session data for the
        * previous week.
        */
-      function renderWeekOverWeekChart(ids) {
+      function renderWeekOverWeekChartByUsers(ids) {
+    
+        // Adjust `now` to experiment with different days, for testing only...
+        var now = moment(); // .subtract(3, 'day');
+    
+        var thisWeek = query({
+          'ids': ids,
+          'dimensions': 'ga:date,ga:nthDay',
+          'metrics': 'ga:users',
+          'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
+          'end-date': moment(now).format('YYYY-MM-DD')
+        });
+    
+        var lastWeek = query({
+          'ids': ids,
+          'dimensions': 'ga:date,ga:nthDay',
+          'metrics': 'ga:users',
+          'start-date': moment(now).subtract(1, 'day').day(0).subtract(1, 'week')
+              .format('YYYY-MM-DD'),
+          'end-date': moment(now).subtract(1, 'day').day(6).subtract(1, 'week')
+              .format('YYYY-MM-DD')
+        });
+    
+        Promise.all([thisWeek, lastWeek]).then(function(results) {
+    
+          var data1 = results[0].rows.map(function(row) { return +row[2]; });
+          var data2 = results[1].rows.map(function(row) { return +row[2]; });
+          var labels = results[1].rows.map(function(row) { return +row[0]; });
+    
+          labels = labels.map(function(label) {
+            return moment(label, 'YYYYMMDD').format('ddd');
+          });
+    
+          var data = {
+            labels : labels,
+            datasets : [
+              {
+                label: 'Last Week',
+                fillColor : 'rgba(220,220,220,0.5)',
+                strokeColor : 'rgba(220,220,220,1)',
+                pointColor : 'rgba(220,220,220,1)',
+                pointStrokeColor : '#fff',
+                data : data2
+              },
+              {
+                label: 'This Week',
+                fillColor : 'rgba(151,187,205,0.5)',
+                strokeColor : 'rgba(151,187,205,1)',
+                pointColor : 'rgba(151,187,205,1)',
+                pointStrokeColor : '#fff',
+                data : data1
+              }
+            ]
+          };
+    
+          new Chart(makeCanvas('chart-ga-users-container')).Line(data);
+          generateLegend('legend-ga-users-container', data.datasets);
+        });
+      }
+    
+    
+      /**
+       * Draw the a chart.js line chart with data from the specified view that
+       * overlays session data for the current week over session data for the
+       * previous week.
+       */
+      function renderWeekOverWeekChartBySessions(ids) {
     
         // Adjust `now` to experiment with different days, for testing only...
         var now = moment(); // .subtract(3, 'day');
@@ -288,7 +358,34 @@ function gapi_init(){
           generateLegend('legend-3-container', data);
         });
       }
+      
     
+      /**
+       * Draw the a chart.js doughnut chart with data from the specified view that
+       * show the top 5 browsers over the past seven days.
+       */
+      function renderOperatingSystemChart(ids) {
+    
+        query({
+          'ids': ids,
+          'dimensions': ['ga:operatingSystemVersion', 'ga:operatingSystem'],
+          'metrics': 'ga:pageviews',
+          'sort': '-ga:pageviews',
+          'max-results': 5
+        })
+        .then(function(response) {
+    
+          var data = [];
+          var colors = ['#4D5360','#949FB1','#D4CCC5','#E2EAE9','#F7464A'];
+    
+          response.rows.forEach(function(row, i) {
+            data.push({ value: +row[1], color: colors[i], label: row[0] });
+          });
+    
+          new Chart(makeCanvas('chart-5-container')).Doughnut(data);
+          generateLegend('legend-5-container', data);
+        });
+      }
     
       /**
        * Draw the a chart.js doughnut chart with data from the specified view that
