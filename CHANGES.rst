@@ -1,6 +1,11 @@
 History
 =======
 
+1.1.17
+-------
+
+- Pinned `kotti_controlpanel`_ to 1.0.2 or greater
+
 1.1.15 - 1.1.16
 -----------------
 
