@@ -19,14 +19,14 @@
               <li>Edit the Google Analytics Settings Below</li>
               <li>
                 Afterwards, visit the
-                <a href="http://kotti-plugins-oshanyb4.c9users.io/@@analytics-setup">
+                <a href="/@@analytics-setup">
                     Setup Google Analytics
               </a>
               page to embed Google Analytics Reports on your site.
               </li>
               <li>
                 Next, visit
-                  <a href="http://kotti-plugins-oshanyb4.c9users.io/@@analytics-report">
+                  <a href="/@@analytics-report">
                         Google Analytics Report
                   </a>
                 page to see all available reports for your site.

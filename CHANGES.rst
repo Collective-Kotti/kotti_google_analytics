@@ -1,6 +1,11 @@
 History
 =======
 
+1.1.20
+-------
+
+- Fixed instruction links
+
 1.1.19
 --------
 
