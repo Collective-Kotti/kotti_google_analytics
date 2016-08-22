@@ -13,13 +13,17 @@ try:
 except IOError:
     CHANGES = ''
 
-version = "1.1.10"
+version = "1.1.14"
 
 install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
-    'googleanalytics>=0.22.2',
+    'googleanalytics==0.22.3',
     'kotti_controlpanel>=1.0.0'
+]
+
+dependency_links=[
+    'https://github.com/b4oshany/google-analytics/tarball/master#egg=googleanalytics-0.22.3'
 ]
 
 
@@ -48,7 +52,7 @@ setup(
     zip_safe=False,
     install_requires=install_requires,
     tests_require=[],
-    dependency_links=[],
+    dependency_links=dependency_links,
     entry_points={
         'fanstatic.libraries': [
             'kotti_google_analytics = kotti_google_analytics.fanstatic:library',
