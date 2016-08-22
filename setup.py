@@ -13,13 +13,13 @@ try:
 except IOError:
     CHANGES = ''
 
-version = "1.1.18"
+version = "1.1.19"
 
 install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
     'googleanalytics==0.22.3',
-    'kotti_controlpanel>=1.0.2'
+    'kotti_controlpanel>=1.0.3'
 ]
 
 dependency_links=[
