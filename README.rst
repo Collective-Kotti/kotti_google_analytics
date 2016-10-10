@@ -78,3 +78,10 @@ Just clone its `Github repository`_ and submit your contributions as pull reques
 .. _alembic documentation: http://alembic.readthedocs.org/en/latest/index.html
 .. _tracker: https://github.com/b4oshany/kotti_google_analytics/issues
 .. _Github repository: https://github.com/b4oshany/kotti_google_analytics
+
+Known Issues
+==============
+
+Pip can't install googleanalystics 0.22.3::
+
+   pip install https://github.com/b4oshany/google-analytics/tarball/master#egg=googleanalytics-0.22.3
