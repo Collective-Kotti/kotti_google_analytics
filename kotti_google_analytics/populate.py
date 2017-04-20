@@ -46,6 +46,7 @@ class AnalyticsSchema(colander.MappingSchema):
 
 GAControlPanel = {
     'name': controlpanel_id,
+    'icon': 'kotti_google_analytics:static/analytics.png',
     'title': _(u'Google Analytics Settings'),
     'description': _(u"Settings for google_analytics"),
     'success_message': _(u"Successfully saved google_analytics settings."),
