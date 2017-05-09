@@ -13,17 +13,13 @@ try:
 except IOError:
     CHANGES = ''
 
-version = "1.1.21"
+version = "1.1.22"
 
 install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
-    'googleanalytics==0.22.3',
+    'googleanalytics>=0.23.0',
     'kotti_controlpanel>=1.0.6'
-]
-
-dependency_links=[
-    'https://github.com/b4oshany/google-analytics/tarball/master#egg=googleanalytics-0.22.3'
 ]
 
 

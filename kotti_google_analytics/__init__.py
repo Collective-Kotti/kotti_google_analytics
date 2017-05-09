@@ -39,7 +39,6 @@ def kotti_configure(settings):
 
     settings['pyramid.includes'] += ' kotti_google_analytics'
     settings['kotti.populators'] += ' kotti_google_analytics.populate.populate'
-    settings['kotti.alembic_dirs'] += ' kotti_google_analytics:alembic'
     settings['kotti.fanstatic.view_needed'] += ' kotti_google_analytics.fanstatic.css_and_js'
     assign_slot('analytics-code', 'belowcontent')
 
