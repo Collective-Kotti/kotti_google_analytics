@@ -1,6 +1,13 @@
 History
 =======
 
+1.2.0
+-------
+Date: 2017-06-09
+
+- Added support for Google Analytics USER ID feature
+- Pinned `kotti_controlpanel`_ to 1.0.9 or greater
+
 1.1.20
 -------
 

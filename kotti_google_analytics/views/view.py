@@ -26,7 +26,8 @@ class CartView(BaseView):
 
     def __call__(self):
         return {
-            "tracking_id": AnalyticsDefault.property_id
+            "tracking_id": get_setting("property_id") or AnalyticsDefault.property_id,
+            "send_user_id": get_setting("send_user_id") or AnalyticsDefault.send_user_id
         }
 
 

@@ -24,6 +24,7 @@ CONTROL_PANEL_LINKS = [
 
 class AnalyticsDefault(object):
     property_id = None
+    send_user_id = False
 
 def kotti_configure(settings):
     """ Add a line like this to you .ini file::

@@ -13,13 +13,13 @@ try:
 except IOError:
     CHANGES = ''
 
-version = "1.1.22"
+version = "1.2.0"
 
 install_requires = [
     'Kotti>=1.0.0',
     'unidecode',
     'googleanalytics>=0.23.0',
-    'kotti_controlpanel>=1.0.6'
+    'kotti_controlpanel>=1.0.9'
 ]
 
 
@@ -48,7 +48,6 @@ setup(
     zip_safe=False,
     install_requires=install_requires,
     tests_require=[],
-    dependency_links=dependency_links,
     entry_points={
         'fanstatic.libraries': [
             'kotti_google_analytics = kotti_google_analytics.fanstatic:library',

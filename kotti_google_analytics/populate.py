@@ -42,6 +42,13 @@ class AnalyticsSchema(colander.MappingSchema):
         title=_(u'Account Property ID'),
         default=AnalyticsDefault.property_id
     )
+    send_user_id = colander.SchemaNode(
+        colander.Boolean(),
+        name="send_user_id",
+        title=_(u'Send User ID to Google Analytics'),
+        label=_(u'Enabling this will allow Google Analytics to individual users'),
+        default=AnalyticsDefault.send_user_id
+    )
 
 
 GAControlPanel = {
