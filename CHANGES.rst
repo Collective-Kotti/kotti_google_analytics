@@ -1,8 +1,8 @@
 History
 =======
 
-1.2.0
--------
+1.2.0 - 1.2.1
+----------------
 Date: 2017-06-09
 
 - Added support for Google Analytics USER ID feature
